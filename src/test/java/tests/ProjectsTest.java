@@ -7,19 +7,25 @@ import static org.testng.Assert.assertEquals;
 
 public class ProjectsTest extends BaseTest{
 
-    @Test(description = "Creation of new project test")
+    @Test(description = "Creation of new project")
     public void createNewProject() {
-        Project project = new Project("GoodDay", "GD21", "Very interesting project");
-        loginPage.openPage();
-        loginPage.isPageOpened();
-        loginPage.login("alex.fursa89@gmail.com", "FireFox_0889");
+        Project project = new Project("GoodDay", "GD21", "Very interesting project", "Public");
+        loginSteps.login(EMAIL, PASSWORD);
         projectsPage.isPageOpened();
-        projectsPage.clickNewProjectButton();
-        newProjectPage.isPageOpened();
-        newProjectPage.inputProjectInfo(project);
-        newProjectPage.choosePublicAccessType();
-        newProjectPage.createProject();
+        projectSteps.createProject(project);
         projectPage.isPageOpened();
         assertEquals(projectPage.getProjectName(), project.getProjectName(), "Project name doesn't match");
+    }
+
+    @Test(description = "Getting an error message when project name is longer than 255 characters")
+    public void createLongTitle() {
+        Project project = new Project("erferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfref" +
+                "regerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerf" +
+                "erfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefr",
+                "GD21", "Very interesting project", "Public");
+        loginSteps.login(EMAIL, PASSWORD);
+        projectsPage.isPageOpened();
+        projectSteps.createProject(project);
+        assertEquals(newProjectPage.getErrorMessage(), "The title may not be greater than 255 characters.", "Error message doesn't match");
     }
 }
