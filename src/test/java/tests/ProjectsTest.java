@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class ProjectsTest extends BaseTest{
+public class ProjectsTest extends BaseTest {
 
     @Test(description = "Creation of new project")
     public void createNewProject() {

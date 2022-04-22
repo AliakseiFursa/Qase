@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class ProjectPage extends BasePage{
+public class ProjectPage extends BasePage {
 
     public static final By PROJECT_HEADER = By.xpath("//p[contains(@class, 'header')]");
 

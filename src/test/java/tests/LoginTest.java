@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
 
     @Test(description = "Log in with correct user data")
     public void correctUserShouldBeLoggedIn() {

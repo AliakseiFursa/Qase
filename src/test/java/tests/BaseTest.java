@@ -15,6 +15,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 @Listeners(TestListener.class)
 public class BaseTest {
 
+    public static final String EMAIL = "alex.fursa89@gmail.com";
+    public static final String PASSWORD = "FireFox_0889";
     LoginPage loginPage;
     NewProjectPage newProjectPage;
     ProjectsPage projectsPage;
@@ -24,9 +26,6 @@ public class BaseTest {
     ProjectSteps projectSteps;
     NewSuiteModal newSuiteModal;
     SuiteSteps suiteSteps;
-
-    public static final String EMAIL = "alex.fursa89@gmail.com";
-    public static final String PASSWORD = "FireFox_0889";
 
     @BeforeMethod(description = "Opening Browser")
     public void setUp() {

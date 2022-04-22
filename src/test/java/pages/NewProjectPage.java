@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
 @Log4j2
-public class NewProjectPage extends BasePage{
+public class NewProjectPage extends BasePage {
 
     public static final By PAGE_TITLE = By.xpath("//h1[contains(text(),'New Project')]");
     public static final By PROJECT_NAME = By.id("inputTitle");
@@ -44,7 +44,7 @@ public class NewProjectPage extends BasePage{
         log.info("Setting access type to '{}'", project.getAccessType());
         if (project.getAccessType().equalsIgnoreCase("Public")) {
             $(PUBLIC_ACCESS).click();
-        }else if (project.getAccessType().equalsIgnoreCase("Private")) {
+        } else if (project.getAccessType().equalsIgnoreCase("Private")) {
             $(PRIVATE_ACCESS).click();
         }
     }

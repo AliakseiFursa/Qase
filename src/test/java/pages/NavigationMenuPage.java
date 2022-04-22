@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
 @Log4j2
-public class NavigationMenuPage extends BasePage{
+public class NavigationMenuPage extends BasePage {
 
     public static final By LOGO = By.id("Logo");
     public static final By PROJECTS = By.xpath("//span[contains(text(),'Projects')]");

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class SuiteTest extends BaseTest{
+public class SuiteTest extends BaseTest {
 
     @Test(description = "Test of creating new suite")
     public void newSuiteShouldBeCreated() {

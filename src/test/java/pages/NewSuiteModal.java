@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 @Log4j2
-public class NewSuiteModal extends BasePage{
+public class NewSuiteModal extends BasePage {
 
     @Override
     public NewSuiteModal isPageOpened() {
