@@ -15,9 +15,10 @@ public class ProjectsPage extends BasePage {
     public static final By NEW_PROJECT_BUTTON = By.id("createButton");
     public static final By PROJECTS_LIST = By.xpath("//a[contains(@class,'defect-title')]");
 
-    @Step("Opening project '{projectName}'")
-    public static void openProject(Project project) {
-        $$(PROJECTS_LIST).findBy(text(project.getProjectName())).click();
+    @Step("Opening project '{name}'")
+    public void openProject(Project project) {
+        log.info("Opening '{}' project page", project.getName());
+        $$(PROJECTS_LIST).findBy(text(project.getName())).click();
     }
 
     @Override

@@ -30,4 +30,9 @@ public class ProjectPage extends BasePage {
     public void clickNewSuiteButton() {
         $("#create-suite-button").click();
     }
+
+    @Step("Creating new case")
+    public void clickNewCaseButton() {
+        $("#create-case-button").click();
+    }
 }

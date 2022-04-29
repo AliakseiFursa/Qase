@@ -1,5 +1,6 @@
 package dto;
 
+import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +10,10 @@ import lombok.Data;
 @AllArgsConstructor
 public class Project {
 
-    String projectName;
-    String projectCode;
-    String projectDescription;
+    @SerializedName("title")
+    String name;
+    String code;
+    String description;
+    @SerializedName("access")
     String accessType;
 }

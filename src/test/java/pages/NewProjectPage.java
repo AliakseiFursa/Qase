@@ -33,10 +33,10 @@ public class NewProjectPage extends BasePage {
 
     @Step("Filling project information")
     public void inputProjectInfo(Project project) {
-        log.info("Creation of project {}", project.getProjectName());
-        $(PROJECT_NAME).sendKeys(project.getProjectName());
-        $(PROJECT_CODE).sendKeys(project.getProjectCode());
-        $(PROJECT_DESCRIPTION).sendKeys(project.getProjectDescription());
+        log.info("Creation of project {}", project.getName());
+        $(PROJECT_NAME).sendKeys(project.getName());
+        $(PROJECT_CODE).sendKeys(project.getCode());
+        $(PROJECT_DESCRIPTION).sendKeys(project.getDescription());
     }
 
     @Step("Setting access type")
