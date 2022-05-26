@@ -13,12 +13,12 @@ public class SuiteTest extends BaseTest {
     public void newSuiteShouldBeCreated() {
         Project project = new Project("GoodDay", "GD21", "Very interesting project", "Public");
         Suite suite = new Suite("GoodJob", "Project root", "Hello", "World");
-        loginSteps.login(EMAIL, PASSWORD);
+        loginSteps.login(user, password);
         projectsPage.isPageOpened();
         projectSteps.createProject(project);
-        assertEquals(projectPage.getProjectName(), project.getProjectName(), "Project name doesn't match");
+        assertEquals(projectPage.getProjectName(), project.getName(), "Project name doesn't match");
         suiteSteps.createSuite(suite);
         newSuiteModal.isSuiteCreated();
-        assertTrue(newSuiteModal.findSuite(suite), "Suite wasn't find");
+        assertTrue(newSuiteModal.findSuite(suite), "Suite wasn't found");
     }
 }

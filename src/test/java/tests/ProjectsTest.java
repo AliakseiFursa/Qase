@@ -10,11 +10,11 @@ public class ProjectsTest extends BaseTest {
     @Test(description = "Creation of new project")
     public void createNewProject() {
         Project project = new Project("GoodDay", "GD21", "Very interesting project", "Public");
-        loginSteps.login(EMAIL, PASSWORD);
+        loginSteps.login(user, password);
         projectsPage.isPageOpened();
         projectSteps.createProject(project);
         projectPage.isPageOpened();
-        assertEquals(projectPage.getProjectName(), project.getProjectName(), "Project name doesn't match");
+        assertEquals(projectPage.getProjectName(), project.getName(), "Project name doesn't match");
     }
 
     @Test(description = "Getting an error message when project name is longer than 255 characters")
@@ -23,7 +23,7 @@ public class ProjectsTest extends BaseTest {
                 "regerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerf" +
                 "erfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefregerferfrefr",
                 "GD21", "Very interesting project", "Public");
-        loginSteps.login(EMAIL, PASSWORD);
+        loginSteps.login(user, password);
         projectsPage.isPageOpened();
         projectSteps.createProject(project);
         assertEquals(newProjectPage.getErrorMessage(), "The title may not be greater than 255 characters.", "Error message doesn't match");

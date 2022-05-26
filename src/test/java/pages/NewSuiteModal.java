@@ -42,7 +42,7 @@ public class NewSuiteModal extends BasePage {
         return this;
     }
 
-    @Step("Finding suite in suite list")
+    @Step("Looking for suite in suite list")
     public boolean findSuite(Suite suite) {
         return $$(byXpath("//a[contains(@class,'style_title-1ehyC')]")).findBy(Condition.text(suite.getSuiteName())).isDisplayed();
     }

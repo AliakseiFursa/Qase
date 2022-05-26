@@ -8,7 +8,7 @@ public class LoginTest extends BaseTest {
 
     @Test(description = "Log in with correct user data")
     public void correctUserShouldBeLoggedIn() {
-        loginSteps.login(EMAIL, PASSWORD);
+        loginSteps.login(user, password);
         projectsPage.isPageOpened();
     }
 
